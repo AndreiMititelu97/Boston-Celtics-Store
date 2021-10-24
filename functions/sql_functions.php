@@ -10,9 +10,9 @@ function conectareBD($host = 'localhost', //Conectare procedural
 }
 
 */
-function connectDB($host = 'localhost', 
-                   $user = 'root', 
-                   $password = '', 
+function connectDB($host = 'mariadb', 
+                   $user = 'andrei', 
+                   $password = 'andrei', 
                    $database = 'magazin'
                   )
 {

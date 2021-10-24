@@ -4,7 +4,7 @@ session_start();//pornesc sesiunea imediat ca a pornit aplicatia
 if(isset($_POST['conectare'])){
     $email = $_POST['email_user'];
     $pass = $_POST['password_user'];
-    
+
     $rezultatConectare = conectare($email, $pass);
     if($rezultatConectare){
         if(isset($_SESSION['eroare_login'])){//sterg cheia-valoare din sesiune daca conectarea a fost cu succes
@@ -13,16 +13,16 @@ if(isset($_POST['conectare'])){
         $_SESSION['user'] = $email;//setez email pe sesiune, cand emailul este setat pe sesiune -> utilizator conectat -> incarc template_conectat.php
     }else{
         $_SESSION['eroare_login'] = 'Conectare esuata';
-    }  
+    }
 }
 if(isset($_GET['id_produs'])){
     $id = $_GET['id_produs'];
-    //verific daca am deja produsul in cos, daca il am deja -> cresc cantitatea 
+    //verific daca am deja produsul in cos, daca il am deja -> cresc cantitatea
     if(isset($_SESSION['cos'][$id])){
         $_SESSION['cos'][$id]++;
     }else{//altfel il setez ca 1 (pt produs care nu este deja in cos)
         $_SESSION['cos'][$id] = 1;
-    }  
+    }
 }
 if(isset($_GET['id_stergere'])){
     $id = $_GET['id_stergere'];
@@ -47,7 +47,7 @@ if(isset($_GET['id_eliminare'])){
             header("location: index.php");
         }else{
             print 'A aparut o eroare';
-        }    
+        }
     }
 ?>
 
@@ -64,17 +64,17 @@ if(isset($_GET['id_eliminare'])){
     <body>
         <header id="banner">
            <img src="imagini/logo.svg" alt="image" class="header-img" id="img-left">
-           <img src="imagini/logo.svg" alt="image" class="header-img"id="img-right">
+           <img src="imagini/logo.svg" alt="image" class="header-img" id="img-right">
            <div id="header-title">Boston Celtics Store</div>
         </header>
         <?php
-        
+
         if(isset($_SESSION['user'])){//daca e setat -> utilizatorul este conectat
             require_once 'templates/template_conectat.php';
         }else{
             require_once 'templates/template_neconectat.php';
         }
         ?>
-        
+
     </body>
 </html>
