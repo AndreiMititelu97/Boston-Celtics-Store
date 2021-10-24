@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  php-apache:
+    container_name: php-apache
+    build: .
+    depends_on:
+      - mariadb
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8000:80
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: magazin
+      MYSQL_USER: andrei
+      MYSQL_PASSWORD: andrei
+    ports:
+      - 9906:3306
+    volumes:
+      - /opt/lampp/mysql/Boston/magazin.sql:/docker-entrypoint-initdb.d/magazin.sql
