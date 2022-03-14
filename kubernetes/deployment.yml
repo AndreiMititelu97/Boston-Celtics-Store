@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boston-celtics-store
+  labels:
+    app: boston-celtics-store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boston-celtics-store
+  template:
+    metadata:
+      labels:
+        app: boston-celtics-store
+    spec:
+      containers:
+      - name: php
+        image: docker.io/andreimititelu/php:1.0.0
+        ports:
+        - containerPort: 8080
+      - name: mariadb
+        image: docker.io/andreimititelu/mariadb:1.0.0
+        ports:
+        - containerPort: 3306
