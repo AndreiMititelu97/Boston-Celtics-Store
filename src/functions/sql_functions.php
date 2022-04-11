@@ -10,7 +10,7 @@ function conectareBD($host = 'localhost', //Conectare procedural
 }
 
 */
-function connectDB($host = 'mysql', 
+function connectDB($host = 'boston-celtics-store_mysql_1', 
                    $user = 'root', 
                    $password = 'root', 
                    $database = 'magazin'
