@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: php
-        image: docker.io/andreimititelu/php:1.0.0
+        image: quay.io/andreimititelu/php:1.0.4
         ports:
         - containerPort: 8080
       - name: mariadb
-        image: docker.io/andreimititelu/mariadb:1.0.0
+        image: quay.io/andreimititelu/mariadb:1.0.3
         ports:
         - containerPort: 3306
