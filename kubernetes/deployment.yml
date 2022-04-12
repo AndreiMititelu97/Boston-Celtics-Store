@@ -15,11 +15,12 @@ spec:
         app: boston-celtics-store
     spec:
       containers:
-      - name: php
-        image: quay.io/andreimititelu/php:1.0.4
-        ports:
-        - containerPort: 8080
       - name: mariadb
-        image: quay.io/andreimititelu/mariadb:1.0.3
+        image: quay.io/andreimititelu/mariadb:1.0.5
         ports:
         - containerPort: 3306
+      - name: php
+        image: quay.io/andreimititelu/php:1.0.5
+        ports:
+        - containerPort: 8080
+
