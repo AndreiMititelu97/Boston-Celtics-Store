@@ -17,10 +17,12 @@ spec:
       containers:
       - name: mariadb
         image: quay.io/andreimititelu/mariadb:1.0.5
+        env:
+          - name: localhost
         ports:
         - containerPort: 3306
       - name: php
-        image: quay.io/andreimititelu/php:1.0.5
+        image: quay.io/andreimititelu/php:1.0.7
         ports:
         - containerPort: 8080
 
