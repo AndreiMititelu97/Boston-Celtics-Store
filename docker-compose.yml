@@ -9,7 +9,7 @@ services:
     environment:
       - MYSQL_DATABASE=magazin
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_ROOt_HOST=mysql  
+      - MYSQL_ROOT_HOST=mysql  
   php:
     image: docker.io/trafex/php-nginx:2.4.0
     ports:
